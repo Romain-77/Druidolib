@@ -1,42 +1,183 @@
-#root {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
+/* ======================================================
+   Author: DRUIDOLIB
+   For: Hackathon 2 wild code school
+   Description: Index stylesheet for general graphic chart
+   ====================================================== */
+
+/* ===== FONT IMPORT ROOT VARIABLES ===== */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+	/* ===== Color light / palette verte ===== */
+
+	--bg: #081b1b; /* Couleur de fond principale */
+	--bg-soft: #203b37; /* Section bloc */
+	--bg-font: #f7f3e9; /* Couleur de texte principale */
+	--bg-font-muted: #b3b0a8; /* Couleur de texte secondaire */
+	--link: #c18d52; /* Couleur des liens */
+	--linkv: #eee8b2; /* Couleur des liens au survol */
+	--accent-1: #c18d52; /* Boutons CTA */
+	--accent-2: #eee8b2; /* Badges */
+	--accent-3: #5a8f76; /* fond et decorations */
+	--accent-4: #96cdb0; /* fond separateur */
+	--black: #000000;
+	--border-subtle: rgba(193, 141, 82, 0.4);
+
+	/* ===== Font family and size ===== */
+	--font-title: "Playfair Display", serif, system-ui, -apple-system, Segoe UI;
+	--font-body: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+
+	--font-h1: clamp(2.8rem, 2.3rem + 2.2vw, 4.5rem); /* ~45px → ~72px */
+	--font-h2: clamp(2rem, 1.6rem + 1.4vw, 3rem); /* ~32px → ~48px */
+	--font-h3: clamp(1.5rem, 1.3rem + 0.8vw, 2.25rem); /* ~24px → ~36px */
+	--font-h4: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem); /* ~20px → ~28px */
+	--font-p: clamp(
+		1rem,
+		0.85rem +
+		0.4vw,
+		1.25rem
+	); /* ~16px mobile → ~20px */
+	--font-small: clamp(0.8rem, 0.7rem + 0.3vw, 1rem); /* ~13px → ~16px */
 }
 
-.logo {
-	height: 6em;
-	padding: 1.5em;
-	will-change: filter;
-	transition: filter 300ms;
-}
-.logo:hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-	filter: drop-shadow(0 0 2em #61dafbaa);
+:root[data-theme="dark"] {
+	/* ===== Color dark / palette rouge ===== */
+
+	--bg: #231919;
+	--bg-soft: #53131e;
+	--bg-font: #fff4e6;
+	--bg-font-muted: #c7a9a2;
+	--link: #edc483;
+	--linkv: #f4d9b5;
+	--accent-1: #edc483;
+	--accent-2: #f4d9b5;
+	--accent-3: #770523;
+	--accent-4: #53131e;
+	--black: #000000;
+	--border-subtle: rgba(237, 196, 131, 0.45);
 }
 
-@keyframes logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+/* ===== RESET LIGHT ===== */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	a:nth-of-type(2) .logo {
-		animation: logo-spin infinite 20s linear;
-	}
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: radial-gradient(circle at top, #123232 0, var(--bg) 45%);
+	font-family: var(--font-body);
+	font-size: var(--font-p);
+	color: var(--bg-font);
+	line-height: 1.6;
 }
 
-.card {
-	padding: 2em;
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 
-.read-the-docs {
-	color: #888;
+a,
+button {
+	cursor: pointer;
+}
+
+/* ===== TEXT ===== */
+
+/*links*/
+a {
+	color: var(--link);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--linkv);
+}
+
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid var(--accent-4);
+	outline-offset: 3px;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+	color: var(--bg-font);
+	font-family: var(--font-title);
+}
+
+h1 {
+	font-size: var(--font-h1);
+	font-weight: 600;
+}
+
+h2 {
+	font-size: var(--font-h2);
+	font-weight: 500;
+}
+
+h3 {
+	font-size: var(--font-h3);
+	font-weight: 500;
+}
+
+h4 {
+	font-size: var(--font-h4);
+	font-weight: 500;
+}
+
+p {
+	margin: 0 0 1.5rem;
+	font-size: var(--font-p);
+}
+
+small {
+	font-size: var(--font-small);
+	color: var(--bg-font-muted);
+}
+
+strong {
+	font-weight: 600;
+}
+
+/* ===== BUTTONS ===== */
+button {
+	border: none;
+	background: var(--accent-1);
+	color: var(--bg);
+	font-family: var(--font-body);
+	font-size: var(--font-p);
+	font-weight: 600;
+	padding: 0.75rem 1.5rem;
+	border-radius: 5rem;
+	transition: background 0.3s ease;
+}
+
+button:hover {
+	background: var(--linkv);
+}
+
+button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.button-secondary {
+	background: transparent;
+	color: var(--bg-font);
+	border: 1px solid var(--border-subtle);
+}
+
+.button-secondary:hover {
+	background: rgba(255, 255, 255, 0.05);
 }
