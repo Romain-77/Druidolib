@@ -1,15 +1,18 @@
 import "./SearchBar.css";
 import type { FormEvent } from "react";
 
-// type SearchBarProps = {
-//     value: string;
-//     onChange: (value: string) => void;
-// };
+type SearchBarProps = {
+	query: string;
+	setQuery: React.Dispatch<React.SetStateAction<string>>;
+	submitResponse: (query: String) => void;
+};
 
-function SearchBar() {
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-    };
+function SearchBar({ query, setQuery, submitResponse }: SearchBarProps) {
+	const handleSubmit = (e: FormEvent) => {
+		e.preventDefault();
+		console.log(query);
+		submitResponse(query);
+	};
 
 	return (
 		<form className="search-bar" onSubmit={handleSubmit}>
@@ -22,8 +25,9 @@ function SearchBar() {
 				className="search-bar-input"
 				placeholder="Recherchez les praticiens"
 				aria-label="Barre de recherche"
-                // value={value}
-                // onChange={(e) => onChange(e.target.value)}
+				onChange={(e) => {
+					setQuery(e.target.value);
+				}}
 			/>
 			<button type="submit" className="search-bar-button">
 				Rechercher

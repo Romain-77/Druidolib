@@ -1,19 +1,14 @@
-.search-bar {
-	display: flex;
-	align-items: center;
-	gap: 0.75rem;
-}
-
 .search-bar-label {
 	position: absolute;
 	left: -9999px;
 }
 
 .search-bar-input {
-	padding: 0.75rem 1.25rem;
+	padding: 0.55rem 1.25rem;
 	border-radius: 50px;
 	border: none;
 	background: #f7f7ff;
+	width: 300px;
 	font-size: var(--font-p);
 }
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PraticiensCard from "../components/PraticienCard/PraticienCard";
 import "./Search.css";
+import SearchBar from "../components/SearchBar/SearchBar";
 
 type Item = {
 	id: number;
@@ -17,8 +18,9 @@ type Item = {
 };
 
 function Search() {
-	const [res, setRes] = useState<Item[] | null>(null);
-
+	const [res, setRes] = useState<Item[] | undefined>(undefined);
+	const [filteredRes, setFilteredRes] = useState<Item[] | undefined>(undefined);
+	const [query, setQuery] = useState("");
 	useEffect(() => {
 		fetch("http://localhost:4242/praticiens")
 			.then((res) => res.json())
@@ -27,12 +29,42 @@ function Search() {
 			});
 	}, []);
 
+	const submitResponse = () => {
+		setFilteredRes(
+			res?.filter(
+				(item) =>
+					item.nom.toLowerCase().includes(query) ||
+					item.presentation.toLowerCase().includes(query) ||
+					item.specialite.toLowerCase().includes(query),
+			),
+		);
+	};
+
+	const dataToDisplay = filteredRes !== undefined ? filteredRes : res;
+
 	return res ? (
-		res.map((item) => {
-			return <PraticiensCard data={item} key={item.id} />;
-		})
+		<>
+			<div className="search-header">
+				<h3>A la recherche d'un specialiste ?</h3>
+				<SearchBar
+					query={query}
+					setQuery={setQuery}
+					submitResponse={submitResponse}
+				/>
+				<small>
+					<em>Ou découvrez l'enssemble de nos gardiens du savoir ci dessous</em>
+				</small>
+			</div>
+			{dataToDisplay && dataToDisplay.length === 0 ? (
+				<p className="search-centered">No results found</p>
+			) : (
+				dataToDisplay?.map((item) => {
+					return <PraticiensCard data={item} key={item.id} />;
+				})
+			)}
+		</>
 	) : (
-		<p>Loading..</p>
+		<p className="search-centered">Loading..</p>
 	);
 }
 
