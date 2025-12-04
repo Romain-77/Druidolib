@@ -50,13 +50,11 @@
 	gap: 1.5rem;
 }
 
-
 /* .navbar-search {
 	flex: 1;
 	display: flex;
 	justify-content: center;
 } */
-
 
 .navbar-list {
 	display: flex;
@@ -101,11 +99,11 @@
 	gap: 0.25rem;
 	padding: 0.4rem;
 	border: none;
-    background: #fff;
+	background: #fff;
 
-    &:hover{
-        background: #fff;
-    }
+	&:hover {
+		background: #fff;
+	}
 }
 
 .navbar-burger-bar {

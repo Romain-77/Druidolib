@@ -4,6 +4,7 @@ function ServicesCard() {
 	return (
 		<>
 			<h1>Nos Services</h1>
+			<p>hop pour biome</p>
 		</>
 	);
 }

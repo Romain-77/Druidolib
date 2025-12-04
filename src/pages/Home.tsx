@@ -1,4 +1,5 @@
 import BookIntro from "../components/Book-intro/Book-intro";
+import ContactForm from "../components/Contact/ContactForm";
 import Hero from "../components/Hero/Hero";
 import ServicesCard from "../components/ServicesCard/ServicesCard";
 import "./Home.css";
@@ -15,6 +16,7 @@ function Home() {
 			<button type="button" className="button">
 				Click Me
 			</button>
+			<ContactForm />
 		</>
 	);
 }

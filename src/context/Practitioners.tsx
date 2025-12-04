@@ -30,7 +30,7 @@
 //     const [practitioners, setPractitioners] = useState<Practitioner[]>([]);
 //     const [searchTerm, setSearchTerm] = useState("");
 //     const [isLoading, setIsLoading] = useState(true);
-//     const [error, setError] = useState<string | null>(null); 
+//     const [error, setError] = useState<string | null>(null);
 
 //     useEffect(() => {
 //         async function fetchPractitioners() {
@@ -50,9 +50,8 @@
 //                 setIsLoading(false);
 //             }
 //         }
-//         fetchPractitioners();   
+//         fetchPractitioners();
 //     }, []);
-
 
 //     const filteredPractitioners = useMemo(() => {
 //         const term = searchTerm.toLowerCase().trim();
