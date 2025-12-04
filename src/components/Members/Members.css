@@ -1,0 +1,231 @@
+.members-container {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4rem 1rem;
+	overflow: hidden;
+}
+
+.members-wrap {
+	max-width: 90rem;
+	width: 100%;
+	text-align: center;
+}
+.members-wrap h2 {
+	padding: 5rem;
+}
+
+.carousel-card {
+	width: 100rem;
+	max-width: 85rem;
+	margin: 0 auto;
+	position: relative;
+	backdrop-filter: blur(15px);
+	border-radius: 2rem;
+	box-shadow:
+		0 8px 32px rgba(0, 0, 0, 0.4),
+		0 0 60px rgb(0, 0, 0);
+}
+
+.carousel-content {
+	position: relative;
+	min-height: 650px;
+	padding: 4rem 2rem 6rem;
+	overflow: hidden;
+	border-radius: 2rem;
+}
+
+.carousel-slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition:
+		opacity 0.7s ease,
+		transform 0.7s ease;
+}
+
+.carousel-slide.active {
+	opacity: 1;
+	transform: translateX(0) scale(1);
+}
+
+.carousel-slide.prev {
+	opacity: 0;
+	transform: translateX(-100%) scale(0.9);
+}
+
+.carousel-slide.next {
+	opacity: 0;
+	transform: translateX(100%) scale(0.9);
+}
+
+.slide-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 3rem 6rem;
+	gap: 2rem;
+}
+
+.member-photo {
+	width: 18rem;
+	height: 18rem;
+	flex-shrink: 0;
+	position: relative;
+	box-shadow:
+		0 0 40px rgba(49, 53, 50, 0.6),
+		inset 0 0 10px rgba(35, 37, 36, 0.2);
+	transition:
+		transform 0.4s ease,
+		box-shadow 0.4s ease;
+	border-radius: 50%;
+}
+
+.member-photo::before {
+	content: "";
+	position: absolute;
+	inset: -12px;
+	border-radius: 50%;
+	background: linear-gradient(45deg, #030705, #000000, #040404) border-box;
+	-webkit-mask:
+		linear-gradient(#0d0000 0 0) padding-box,
+		linear-gradient(#0c0101 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	animation: photoGlow 4s linear infinite;
+	z-index: -1;
+}
+
+@keyframes photoGlow {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.member-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 4px solid rgba(0, 0, 0, 0.923);
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.996);
+	transition: transform 0.4s ease;
+}
+
+.member-photo img:hover {
+	transform: scale(1.08);
+}
+
+.member-info h3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.member-info p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.carousel-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	backdrop-filter: blur(8px);
+	color: #000000;
+	padding: 0;
+	border-radius: 50%;
+	border: 2px solid rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	font-size: 2.5rem;
+	font-weight: bold;
+	width: 3.5rem;
+	height: 3.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+	z-index: 10;
+	transition: all 0.3 ease;
+}
+
+.carousel-arrow:hover {
+	background: rgba(0, 0, 0, 0.9);
+	border-color: #000905;
+	transform: translateY(-50%) scale(1.15);
+	box-shadow: 0 0 30px rgba(150, 255, 180, 0.6);
+}
+
+.carousel-arrow:active {
+	transform: translateY(-50%) scale(0.9);
+}
+
+.carousel-arrow-left {
+	left: 2rem;
+}
+
+.carousel-arrow-right {
+	right: 2rem;
+}
+
+.carousel-dots {
+	position: absolute;
+	bottom: 1.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 1rem;
+	z-index: 10;
+}
+
+.carousel-dot {
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 50%;
+	background: rgba(171, 113, 4, 0.3);
+	border: 1px solid rgba(0, 8, 2, 0.4);
+	cursor: pointer;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	padding: 0;
+	box-shadow:
+		0 0 8px rgba(40, 42, 40, 0.3),
+		inset 0 0 4px rgba(60, 66, 62, 0.2);
+	position: relative;
+}
+
+.carousel-dot::before {
+	content: "";
+	position: absolute;
+	inset: -4px;
+	border-radius: 50%;
+	background: radial-gradient(
+		circle,
+		rgba(28, 31, 29, 0.4) 0%,
+		transparent 70%
+	);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.carousel-dot:hover::before {
+	opacity: 1;
+}
+
+.carousel-dot:hover {
+	background: linear-gradient(135deg, #444947, #1c1e1d);
+	width: 2.5rem;
+	border-radius: 1rem;
+	box-shadow:
+		0 0 20px rgba(33, 34, 34, 0.8),
+		inset 0 0 8px rgba(255, 255, 255, 0.3);
+	border-color: rgba(41, 44, 42, 0.8);
+}
