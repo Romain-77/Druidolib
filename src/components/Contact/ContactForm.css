@@ -18,6 +18,14 @@
 	border: 1px solid var(--accent-1);
 	padding: 2rem 2.5rem;
 	box-shadow: var(--shadow-soft, 0 18px 40px rgba(0, 0, 0, 0.45));
+	transition:
+		transform 0.15s ease-out,
+		box-shadow 0.15s ease-out,
+		border-color 0.15s ease-out;
+}
+
+.contact-form-wrapper:hover {
+	transform: translateY(-4px);
 }
 
 .form-contact {
