@@ -1,5 +1,5 @@
 .praticien-card-container {
-	margin: 0 auto;
+	margin: 8rem auto;
 	position: relative;
 	border: 1px solid;
 	border-color: color-mix(in srgb, var(--accent-2) 70%, transparent);
@@ -25,6 +25,7 @@
 		img {
 			height: 220px;
 			width: 170px;
+			object-position: top;
 			object-fit: cover;
 		}
 	}
@@ -32,9 +33,11 @@
 		grid-area: 1 / 2 / 2 / 4;
 		place-self: center;
 		margin: 0;
+		max-height: 100px;
 	}
 	.praticien-card-btn {
 		place-self: end;
 		grid-area: 2 / 3 / 3 / 5;
+		margin: 0;
 	}
 }
