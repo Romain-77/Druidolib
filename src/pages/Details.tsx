@@ -6,6 +6,8 @@ import "./Details.css";
 type Praticien = {
 	id: number;
 	nom: string;
+	age: string;
+	tarif: string;
 	specialite: string;
 	presentation: string;
 	adresse: string;
@@ -31,17 +33,33 @@ function Details() {
 	return (
 		<div className="praticien-detail-page">
 			<div className="praticien-detail-mainPresentation">
-				<figure className="praticien-detail-portrait">
+				<div className="praticien-detail-portrait">
 					<img
 						className="praticien-detail-img"
 						src={praticien?.imagePraticien}
 						alt={praticien?.nom}
 					/>
-				</figure>
+				</div>
 				<section className="praticien-detail-section-title">
 					<h1 className="praticien-detail-title">{praticien?.nom}</h1>
-					<p>{praticien?.specialite}</p>
-					<p>{praticien?.presentation}</p>
+					<ul className="praticien-detail-liste">
+						<li>
+							<strong>Qui est-il ? : </strong>
+							{praticien?.presentation}
+						</li>
+						<li>
+							<strong>Sa spécialité : </strong>
+							{praticien?.specialite}
+						</li>
+						<li>
+							<strong>Son âge : </strong>
+							{praticien?.age}
+						</li>
+						<li>
+							<strong>Tarif : </strong>
+							{praticien?.tarif}
+						</li>
+					</ul>
 				</section>
 			</div>
 			<div className="praticien-detail-secondPresentation">
