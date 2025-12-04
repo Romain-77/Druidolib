@@ -1,5 +1,6 @@
 import type { FormEvent } from "react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import megaphone from "../../assets/contact/megaphone.svg";
 import pigeon from "../../assets/contact/pigeon.svg";
 import tree from "../../assets/contact/tree.svg";
@@ -26,6 +27,7 @@ const initData: FormData = {
 };
 
 export default function ContactForm() {
+	const { t } = useTranslation();
 	const [values, setValues] = useState<FormData>(initData); //champ du formulaire
 	const [status, setStatus] = useState<
 		"idle" | "sending" | "success" | "error"
@@ -238,29 +240,22 @@ export default function ContactForm() {
 					</form>
 				</div>
 				<aside className="contact-info" aria-labelledby="contact-title">
-					<p className="contact-info-kicker">CONCLAVE DES PRATICIENS</p>
-					<h2 id="contact-title">Envoyer une missive au cercle</h2>
-					<p>
-						Confiez-nous vos maux, visions étranges ou simples curiosités. Les
-						druides, sorcières et devins de Druidolib liront votre message et
-						vous répondront dès que la lune leur en laissera le temps.
-					</p>
+					<p className="contact-info-kicker">{t("home.contact.kicker")}</p>
+					<h2 id="contact-title">{t("home.contact.title")}</h2>
+					<p>{t("home.contact.intro")}</p>
 
 					<ul className="contact-info-list">
 						<li>
 							<img src={pigeon} className="contact-icon" alt="" />
-							<span>tour à pigeons de Brocéliande</span>
+							<span>{t("home.contact.bullets.pigeon")}</span>
 						</li>
 						<li>
 							<img src={megaphone} className="contact-icon" alt="" />
-							<span>
-								Hurlez Druidolib plusieurs fois peut-être que cela ne sera pas
-								tombé dans l'oreille d'un sourd.
-							</span>
+							<span>{t("home.contact.bullets.shout")}</span>
 						</li>
 						<li>
 							<img src={tree} className="contact-icon" alt="" />
-							<span>Clairière du Vieux Chêne, Royaume de Druidolib</span>
+							<span>{t("home.contact.bullets.forest")}</span>
 						</li>
 					</ul>
 				</aside>

@@ -9,12 +9,6 @@ function Home() {
 		<>
 			<BookIntro content />
 			<Hero />
-			<button type="button" className="button-secondary">
-				Click Me
-			</button>
-			<button type="button" className="button">
-				Click Me
-			</button>
 			<ContentSection />
 			<ContactForm />
 		</>

@@ -4,6 +4,7 @@ import App from "./App";
 import About from "./pages/About";
 import Details from "./pages/Details";
 import Home from "./pages/Home";
+import "./typescript/i18n";
 import Search from "./pages/Search";
 
 // page components

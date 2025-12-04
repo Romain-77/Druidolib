@@ -1,44 +1,36 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./FAQ.css";
 
 function FAQ() {
+	const { t } = useTranslation();
 	const [activeId, setActiveId] = useState<number | null>(null);
 
 	const questions = [
 		{
 			id: 1,
-			question:
-				"J'ai vu qu'un Shaman accepte les paiements en chèvres. Est-ce sérieux ?",
-			reponse:
-				"Oui, le troc est courant ! Une chèvre laitière est une monnaie honorable. Vérifiez juste qu'elle ne soit pas ensorcelée, sinon la consultation coûte double !",
+			question: t("about.faq.items.q1.question"),
+			reponse: t("about.faq.items.q1.answer"),
 		},
 		{
 			id: 2,
-			question:
-				"Je souffre d'une toux qui fait trembler tout le village. Quel Druide peut me soigner rapidement ?",
-			reponse:
-				"Nos Druides sont les meilleurs ! Ils vous feront une décoction à base de mousse de chêne et de bave de crapaud (on rigole, c'est juste de l'ortie).",
+			question: t("about.faq.items.q2.question"),
+			reponse: t("about.faq.items.q2.answer"),
 		},
 		{
 			id: 3,
-			question:
-				"Je me suis cassé la jambe en tombant de mon tas de fumier. La Sorcière peut-elle me soigner sans hurler ?",
-			reponse:
-				"Elle ne hurle pas, elle 'harmonise les os'. Vous oublierez la douleur... et votre nom pendant une heure, grâce au cataplasme magique.",
+			question: t("about.faq.items.q3.question"),
+			reponse: t("about.faq.items.q3.answer"),
 		},
 		{
 			id: 4,
-			question:
-				"Les potions des Druides sont-elles buvables, ou faut-il faire semblant ?",
-			reponse:
-				"Elles ont le goût de chaussettes mouillées. Buvez vite, sinon le Druide, vexé, vous donnera une potion encore pire.",
+			question: t("about.faq.items.q4.question"),
+			reponse: t("about.faq.items.q4.answer"),
 		},
 		{
 			id: 5,
-			question:
-				"Mon cochon est apathique et refuse de se rouler dans la boue. Est-ce que Druidolib peut le soigner ?",
-			reponse:
-				"Oui ! Nos Druides Vétérinaires soignent le 'Mauvais Œil d'envieux' chez les bêtes. Une infusion de plantain et trois incantations suffiront. Votre porcinet va vite retrouver la boue.",
+			question: t("about.faq.items.q5.question"),
+			reponse: t("about.faq.items.q5.answer"),
 		},
 	];
 
@@ -48,7 +40,7 @@ function FAQ() {
 
 	return (
 		<section className="faq-section">
-			<h3>Nos questions les plus fréquentes</h3>
+			<h3>{t("about.faq.title")}</h3>
 
 			<div className="faq-liste">
 				{questions.map((item) => (
