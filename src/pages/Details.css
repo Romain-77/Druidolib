@@ -1,0 +1,198 @@
+.praticien-detail-page {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 2rem;
+	margin: 2rem 0;
+}
+
+.praticien-detail-mainPresentation {
+	padding: 3rem 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.praticien-detail-portrait {
+	border: 80px solid transparent;
+	border-image: url(../assets/praticiens-assets/search-details-cadre.png) 120
+		fill round;
+	width: 550px;
+	height: 700px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	box-sizing: border-box;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.praticien-detail-section-title {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	width: 50%;
+}
+
+.praticien-detail-liste {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	padding: 20px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+	li {
+		margin-left: 10px;
+		padding: 15px 20px;
+		line-height: 1.5;
+		background-color: rgba(255, 255, 255, 0.05);
+		border-radius: 8px;
+		display: flex;
+		align-items: flex-start;
+		gap: 10px;
+		font-style: italic;
+		font-weight: 200;
+		font-size: large;
+		transition:
+			transform 0.3s ease,
+			background-color 0.3s ease;
+	}
+}
+
+.praticien-detail-liste li strong {
+	color: #c18d52;
+	font-weight: bold;
+	width: 130px;
+	display: inline-block;
+	flex-shrink: 0;
+}
+
+.praticien-detail-liste li span {
+	flex: 1; /* texte principal prend le reste de l’espace */
+}
+
+.praticien-detail-liste li:hover {
+	transform: translateY(-3px);
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.praticien-detail-liste li:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: -15px;
+	transform: translateX(-50%);
+	width: 25%;
+	height: 1.2px;
+	margin: 25px auto 0;
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0.6),
+		rgba(255, 255, 255, 0.2)
+	);
+	border-radius: 1px;
+	opacity: 1;
+	pointer-events: none;
+}
+
+.praticien-detail-secondPresentation {
+	position: relative;
+	margin: 3rem 0;
+	padding: 2rem 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 4rem;
+}
+
+.praticien-detail-lieu {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: start;
+	text-align: start;
+	padding-top: 2rem;
+	justify-content: flex-start;
+	gap: 4rem;
+	width: 30%;
+	p {
+		background-color: rgba(255, 255, 255, 0.05);
+		padding: 10px 15px;
+		border-radius: 8px;
+		font-style: italic;
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: rgba(255, 255, 255, 0.8);
+		max-width: 600px;
+	}
+}
+
+.praticien-detail-lieu p::before {
+	content: "📍 ";
+}
+
+.praticien-detail-title2 {
+	color: #c18d52;
+}
+
+.praticien-detail-imgLieu {
+	width: 250px;
+	height: auto;
+	display: block;
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+	border-radius: 8px;
+	transform: translateY(-3px);
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.praticien-detail-imgLieu:hover {
+	transform: translateY(-5px) scale(1.05);
+	box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+}
+.path-arrow {
+	position: absolute;
+	left: 52%;
+	top: 28%;
+	transform: translate(-50%, -50%);
+	opacity: 0.7;
+}
+.path-arrow svg path,
+polygon {
+	stroke-dasharray: 8 8;
+	stroke-linecap: round;
+	filter: drop-shadow(0 0 4px #c29364);
+	animation:
+		draw 2.5s ease forwards,
+		sparkle 2.8s infinite ease-in-out;
+}
+@keyframes draw {
+	from {
+		stroke-dashoffset: 300;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes sparkle {
+	0% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.6;
+	}
+}
