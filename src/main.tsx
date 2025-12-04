@@ -1,10 +1,9 @@
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-
-import About from "./pages/About";
 import App from "./App";
+import About from "./pages/About";
 import Details from "./pages/Details";
 import Home from "./pages/Home";
-import ReactDOM from "react-dom/client";
 import Search from "./pages/Search";
 
 // page components

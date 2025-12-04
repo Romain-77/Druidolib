@@ -1,6 +1,5 @@
 // import hook react
-import { useEffect, useState } from "react";
-import { useEffect as useEffectType } from "react";
+import { useEffect, useEffect as useEffectType, useState } from "react";
 import moonIcon from "../../assets/Toggle/moon.svg";
 import sunIcon from "../../assets/Toggle/sun.svg";
 import "./Toggle.css";
