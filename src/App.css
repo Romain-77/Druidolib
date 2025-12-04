@@ -93,6 +93,9 @@ a {
 a:hover {
 	color: var(--linkv);
 }
+.button:hover {
+	color: var(--bg);
+}
 
 a:focus-visible,
 button:focus-visible {
@@ -146,7 +149,8 @@ strong {
 }
 
 /* ===== BUTTONS ===== */
-button {
+button,
+.button {
 	border: none;
 	background: var(--accent-1);
 	color: var(--bg);
@@ -158,11 +162,12 @@ button {
 	transition: background 0.3s ease;
 }
 
-button:hover {
+button:hover,
+.button:hover {
 	background: var(--linkv);
 }
-
-button:disabled {
+button:disabled,
+.button:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
 }

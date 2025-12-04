@@ -7,9 +7,9 @@ import type { FormEvent } from "react";
 // };
 
 function SearchBar() {
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-    };
+	const handleSubmit = (e: FormEvent) => {
+		e.preventDefault();
+	};
 
 	return (
 		<form className="search-bar" onSubmit={handleSubmit}>
@@ -22,8 +22,8 @@ function SearchBar() {
 				className="search-bar-input"
 				placeholder="Recherchez les praticiens"
 				aria-label="Barre de recherche"
-                // value={value}
-                // onChange={(e) => onChange(e.target.value)}
+				// value={value}
+				// onChange={(e) => onChange(e.target.value)}
 			/>
 			<button type="submit" className="search-bar-button">
 				Rechercher
