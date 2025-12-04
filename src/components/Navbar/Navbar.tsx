@@ -1,9 +1,9 @@
 import "./Navbar.css";
 import { NavLink } from "react-router";
-import logo from "../../assets/Navbar/logo.svg";
 import { useState } from "react";
+import logo from "../../assets/Navbar/logo.svg";
 import Toggle from "../ToggleTheme/Toggle";
-import SearchBar from "../SearchBar/SearchBar";
+// import SearchBar from "../SearchBar/SearchBar";
 // import { usePractitioners } from "../../context/Practitioners";
 
 
