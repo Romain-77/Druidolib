@@ -68,7 +68,14 @@ function Details() {
 					<p>{praticien?.adresse}</p>
 				</div>
 				<div className="path-arrow">
-					<svg width="180" height="120" viewBox="0 0 180 120" fill="none">
+					<svg
+						width="180"
+						height="120"
+						viewBox="0 0 180 120"
+						fill="none"
+						aria-hidden="true"
+						focusable="false"
+					>
 						<path
 							d="M10 20 C 80 80, 120 20, 170 70"
 							stroke="#C29364"

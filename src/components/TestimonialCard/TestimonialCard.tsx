@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./TestimonialCard.css";
 
 interface TestimonialCardProps {
