@@ -147,21 +147,14 @@
 	flex-shrink: 0;
 }
 
-dialog.form-modal-backdrop {
+.form-modal-backdrop {
 	position: fixed;
 	inset: 0;
-	background: transparent;
-	border: none;
+	background: rgba(0, 0, 0, 0.45);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 999;
-}
-
-.form-modal-backdrop {
-	border: none;
-	padding: 0;
-	background: rgba(0, 0, 0, 0.45);
 }
 
 .form-modal {

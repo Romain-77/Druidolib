@@ -1,5 +1,6 @@
+import type React from "react";
 import type { FormEvent } from "react";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import megaphone from "../../assets/contact/megaphone.svg";
 import pigeon from "../../assets/contact/pigeon.svg";
@@ -51,9 +52,36 @@ export default function ContactForm() {
 	};
 
 	//modale
-	const closeModal = () => {
+	const closeModal = useCallback(() => {
 		setIsModalOpen(false);
-	};
+	}, []);
+
+	// const handleBackdropMouseDown = (
+	// 	e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+	// ) => {
+	// 	if (e.target === e.currentTarget) {
+	// 		closeModal();
+	// 	}
+	// };
+
+	useEffect(() => {
+		if (!isModalOpen) return;
+
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === "Escape") {
+				closeModal();
+			}
+		};
+
+		window.addEventListener("keydown", onKeyDown);
+		return () => window.removeEventListener("keydown", onKeyDown);
+	}, [isModalOpen, closeModal]);
+
+	// const handleDialogClick = (e: React.MouseEvent<HTMLDialogElement>) => {
+	// 	if (e.target === e.currentTarget) {
+	// 		closeModal();
+	// 	}
+	// };
 
 	// Submission du formulaire
 
@@ -262,13 +290,25 @@ export default function ContactForm() {
 			</div>
 			{/* MODALE */}
 			{isModalOpen && (
-				<dialog
+				// biome-ignore lint: le backdrop n'est pas un vrai bouton, il sert juste à fermer la modale au clic extérieur
+				<div
+					role="presentation"
+					tabIndex={-1}
 					className="form-modal-backdrop"
 					aria-modal="true"
 					aria-labelledby="form-modal-title"
-					open
+					onClick={(e) => {
+						if (e.target === e.currentTarget) {
+							closeModal();
+						}
+					}}
 				>
-					<div className="form-modal">
+					<div
+						className="form-modal"
+						role="dialog"
+						aria-modal="true"
+						aria-labelledby="form-modal-title"
+					>
 						<h3 id="form-modal-title">
 							{status === "success"
 								? "Le corbeau est bien arrivé !"
@@ -279,7 +319,7 @@ export default function ContactForm() {
 							Refermer le parchemin
 						</button>
 					</div>
-				</dialog>
+				</div>
 			)}
 		</section>
 	);
