@@ -32,6 +32,7 @@ function PraticiensCard({ data }: PraticiensCardProps) {
 				src={data.badge}
 				alt="badge specialite"
 				className="praticien-card-badge"
+				title={data.categorie}
 			/>
 		</div>
 	);
