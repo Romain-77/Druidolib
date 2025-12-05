@@ -38,7 +38,11 @@ function Search() {
 			),
 		);
 	};
-
+	const badgeResponse = (badge: string) => {
+		setFilteredRes(
+			res?.filter((item) => item.categorie.toLowerCase().includes(badge)),
+		);
+	};
 	const dataToDisplay = filteredRes !== undefined ? filteredRes : res;
 
 	return res ? (
@@ -49,6 +53,7 @@ function Search() {
 					query={query}
 					setQuery={setQuery}
 					submitResponse={submitResponse}
+					badgeResponse={badgeResponse}
 				/>
 				<small>
 					<em>Ou découvrez l'enssemble de nos gardiens du savoir ci dessous</em>

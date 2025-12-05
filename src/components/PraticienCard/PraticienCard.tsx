@@ -25,9 +25,14 @@ function PraticiensCard({ data }: PraticiensCardProps) {
 				<h4>{data.nom}</h4>
 				<p>{data.specialite}</p>
 			</div>
-			<Link to="/" className="button praticien-card-btn">
+			<Link to={`/details/${data.id}`} className="button praticien-card-btn">
 				Decouvrir ce praticien
 			</Link>
+			<img
+				src={data.badge}
+				alt="badge specialite"
+				className="praticien-card-badge"
+			/>
 		</div>
 	);
 }
