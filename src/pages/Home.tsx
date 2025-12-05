@@ -6,8 +6,10 @@ import "./Home.css";
 function Home() {
 	return (
 		<>
-			<Hero />
-			<ContentSection />
+			<section className="home-hero">
+				<Hero />
+				<ContentSection />
+			</section>
 			<ContactForm />
 		</>
 	);
