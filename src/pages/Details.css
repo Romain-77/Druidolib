@@ -196,3 +196,43 @@ polygon {
 		opacity: 0.6;
 	}
 }
+
+@media (max-width: 768px) {
+	.praticien-detail-mainPresentation,
+	.praticien-detail-secondPresentation {
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.praticien-detail-portrait {
+		width: 100%;
+		height: auto;
+	}
+
+	.praticien-detail-section-title {
+		width: 100%;
+	}
+
+	.praticien-detail-liste {
+		padding: 10px;
+		gap: 15px;
+	}
+
+	.praticien-detail-liste li {
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.praticien-detail-lieu {
+		width: 100%;
+	}
+
+	.praticien-detail-imgLieu {
+		width: 150px;
+	}
+
+	.path-arrow {
+		left: 50%;
+		top: 25%;
+	}
+}

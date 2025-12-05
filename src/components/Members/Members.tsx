@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Members.css";
 import Aurélie from "../../assets/Members/Aurélie_Apothicaire.jpg";
 import Juliette from "../../assets/Members/Juliette_Chaman.png";
-import Léa from "../../assets/Members/Léa_Sorciere.jpg";
+import Léa from "../../assets/Members/Léa_Sorciere.jpg";
 import Romain from "../../assets/Members/Romain_Druide.png";
 
 function Members() {
