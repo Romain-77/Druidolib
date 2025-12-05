@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
 import PraticiensCard from "../components/PraticienCard/PraticienCard";
-import "./Search.css";
 import SearchBar from "../components/SearchBar/SearchBar";
-
+import "./Search.css";
+import { useState, useEffect } from "react";
 type Item = {
 	id: number;
 	categorie: string;
@@ -45,7 +44,7 @@ function Search() {
 	return res ? (
 		<>
 			<div className="search-header">
-				<h3>A la recherche d'un specialiste ?</h3>
+				<h3>A la recherche d'un spécialiste ?</h3>
 				<SearchBar
 					query={query}
 					setQuery={setQuery}
