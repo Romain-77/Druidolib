@@ -1,5 +1,3 @@
-import "./TestimonialCard.css";
-
 interface TestimonialCardProps {
 	commentaire: string;
 	auteur: string;

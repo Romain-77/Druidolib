@@ -62,7 +62,7 @@ i18n.use(initReactI18next).init({
 					},
 				},
 				about: {
-					title: "À propos de Druidolib",
+					title: "Quant à notre assemblée",
 					intro:
 						"Druidolib est un annuaire enchanté qui rassemble Druides, Sorcières, Devins et autres praticiens mystiques pour vous accompagner avec bienveillance, humour et un soupçon de magie.",
 					faq: {

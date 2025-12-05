@@ -3,6 +3,10 @@
 	text-align: center;
 }
 
+.testimonials-section h2 {
+	padding: 1.5rem;
+}
+
 .testimonials-display {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -25,6 +29,13 @@
 	background: rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
+	transition:
+		transform 0.15s ease-out,
+		box-shadow 0.15s ease-out,
+		border-color 0.15s ease-out;
+}
+.testimonial-card:hover {
+	transform: translateY(-4px);
 }
 
 .rating {

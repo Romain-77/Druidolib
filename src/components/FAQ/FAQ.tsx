@@ -40,7 +40,7 @@ function FAQ() {
 
 	return (
 		<section className="faq-section">
-			<h3>{t("about.faq.title")}</h3>
+			<h2>{t("about.faq.title")}</h2>
 
 			<div className="faq-liste">
 				{questions.map((item) => (
