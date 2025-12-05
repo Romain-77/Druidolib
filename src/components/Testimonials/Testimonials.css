@@ -16,12 +16,15 @@
 .testimonial-card {
 	padding: 25px;
 	border-radius: 15px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 4px 12px rgba(0, 1, 2, 3);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
 	border: 3px solid var(--border-subtle);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 }
 
 .rating {
@@ -54,4 +57,47 @@
 .auteur {
 	font-weight: bold;
 	margin: 0;
+}
+@media (max-width: 900px) {
+	.testimonials-display {
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
+
+	.testimonial-card {
+		padding: 20px;
+	}
+}
+
+@media (max-width: 600px) {
+	.testimonials-section {
+		padding: 30px 15px;
+	}
+
+	.testimonial-card {
+		padding: 18px;
+		border-radius: 12px;
+	}
+
+	.client-photo {
+		width: 60px;
+		height: 60px;
+	}
+
+	.rating {
+		font-size: 1.3rem;
+	}
+}
+@media (max-width: 400px) {
+	.testimonial-card {
+		padding: 15px;
+	}
+
+	.commentaire {
+		font-size: 0.9rem;
+	}
+
+	.auteur {
+		font-size: 0.95rem;
+	}
 }
