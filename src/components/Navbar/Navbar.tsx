@@ -1,11 +1,11 @@
 import "./Navbar.css";
-import { NavLink } from "react-router";
 import { useState } from "react";
+import { NavLink } from "react-router";
 import logo from "../../assets/Navbar/logo.svg";
 import Toggle from "../ToggleTheme/Toggle";
+
 // import SearchBar from "../SearchBar/SearchBar";
 // import { usePractitioners } from "../../context/Practitioners";
-
 
 function Navbar() {
 	// const { searchTerm, setSearchTerm } = usePractitioners();
@@ -59,6 +59,15 @@ function Navbar() {
 						</li>
 						<li>
 							<NavLink
+								to="/search"
+								className="navbar-link"
+								onClick={handleLinkClick}
+							>
+								Search
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
 								to="/about"
 								className="navbar-link"
 								onClick={handleLinkClick}
@@ -77,7 +86,7 @@ function Navbar() {
 			</div>
 		</header>
 		// <>
-		// 	<NavLink to="/search">Search</NavLink>
+		//
 		// 	<NavLink to="/details/23">Details</NavLink>
 		// </>
 	);
