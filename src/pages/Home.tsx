@@ -8,8 +8,10 @@ function Home() {
 	return (
 		<>
 			<BookIntro content />
-			<Hero />
-			<ContentSection />
+			<section className="home-hero">
+				<Hero />
+				<ContentSection />
+			</section>
 			<ContactForm />
 		</>
 	);
