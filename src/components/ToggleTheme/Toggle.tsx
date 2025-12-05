@@ -2,6 +2,7 @@
 import { useEffect, useEffect as useEffectType, useState } from "react";
 import moonIcon from "../../assets/Toggle/moon.svg";
 import sunIcon from "../../assets/Toggle/sun.svg";
+import i18n from "../../typescript/i18n";
 import "./Toggle.css";
 
 // Composant Toggle pour changer le thème clair/sombre en gros il y a deux valeurs "light" et "dark"
@@ -27,10 +28,11 @@ function Toggle() {
 	// theme = valeur actuelle , setTheme = fonction pour la mettre a jour
 	const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
-	// applique & sauvegarde le thème
+	// applique & sauvegarde le thème + thon de texte
 	useEffect(() => {
 		document.documentElement.setAttribute("data-theme", theme); // lie avec le css via l'attribut data-theme
 		localStorage.setItem(STORAGE_KEY, theme);
+		i18n.changeLanguage(theme);
 	}, [theme]);
 
 	// écoute changement du système (si pas de préférence enregistrée)
@@ -51,7 +53,7 @@ function Toggle() {
 			type="button"
 			className="theme-toggle"
 			aria-pressed={theme === "dark"}
-			aria-label="Basculer le thème"
+			aria-label="Basculer le thème et le ton du texte"
 			onClick={toggleTheme}
 		>
 			<span className="icon-viewport" aria-hidden="true">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Members.css";
 import Aurélie from "../../assets/Members/Aurélie_Apothicaire.jpg";
 import Juliette from "../../assets/Members/Juliette_Chaman.png";

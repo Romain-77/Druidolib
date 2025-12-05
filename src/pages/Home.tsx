@@ -7,12 +7,6 @@ function Home() {
 	return (
 		<>
 			<Hero />
-			<button type="button" className="button-secondary">
-				Click Me
-			</button>
-			<button type="button" className="button">
-				Click Me
-			</button>
 			<ContentSection />
 			<ContactForm />
 		</>

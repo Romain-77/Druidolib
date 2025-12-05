@@ -67,6 +67,24 @@ function Details() {
 					<h2 className="praticien-detail-title2">Retrouvez-moi :</h2>
 					<p>{praticien?.adresse}</p>
 				</div>
+				<div className="path-arrow">
+					<svg
+						width="180"
+						height="120"
+						viewBox="0 0 180 120"
+						fill="none"
+						aria-hidden="true"
+						focusable="false"
+					>
+						<path
+							d="M10 20 C 80 80, 120 20, 170 70"
+							stroke="#C29364"
+							stroke-width="3"
+							stroke-linecap="round"
+						/>
+						<polygon points="173,61 175,75 160,75" fill="#C29364" />
+					</svg>
+				</div>
 				<figure>
 					<img
 						className="praticien-detail-imgLieu"

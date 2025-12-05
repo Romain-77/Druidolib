@@ -59,6 +59,15 @@ function Navbar() {
 						</li>
 						<li>
 							<NavLink
+								to="/search"
+								className="navbar-link"
+								onClick={handleLinkClick}
+							>
+								Search
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
 								to="/about"
 								className="navbar-link"
 								onClick={handleLinkClick}
@@ -77,7 +86,7 @@ function Navbar() {
 			</div>
 		</header>
 		// <>
-		// 	<NavLink to="/search">Search</NavLink>
+		//
 		// 	<NavLink to="/details/23">Details</NavLink>
 		// </>
 	);
