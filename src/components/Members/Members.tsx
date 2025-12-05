@@ -54,7 +54,7 @@ function Members() {
 	return (
 		<div className="members-container">
 			<div className="members-wrap">
-				<h2>Notre équipe</h2>
+				{/* <h2>Notre équipe</h2> */}
 				<div className="carousel-card">
 					<div className="carousel-content">
 						{members.map((member, index) => (

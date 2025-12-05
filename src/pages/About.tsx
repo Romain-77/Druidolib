@@ -6,7 +6,7 @@ import Testimonials from "../components/Testimonials/Testimonials";
 function About() {
 	return (
 		<>
-			<h1>About</h1>
+			<h1 className="about">Quant à notre assemblée</h1>
 			<Members />
 			<FAQ />
 			<Testimonials />
