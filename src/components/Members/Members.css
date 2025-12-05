@@ -570,6 +570,23 @@
 		right: 1.2rem;
 	}
 }
+@media (min-width: 801px) and (max-width: 1199px) {
+	.carousel-card {
+		max-width: 50rem;
+		border-radius: 2rem;
+	}
+
+	.carousel-content {
+		min-height: 520px;
+		padding: 2.5rem 1.2rem 4rem;
+	}
+
+	.member-photo {
+		width: 13rem;
+		height: 13rem;
+	}
+}
+
 @media (max-width: 800px) {
 	.members-container {
 		padding: 3rem 0.5rem;
