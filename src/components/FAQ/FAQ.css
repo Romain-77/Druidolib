@@ -8,6 +8,10 @@
 	margin: 5em auto;
 }
 
+.faq-section h2 {
+	padding: 1.5rem;
+}
+
 .faq-liste {
 	width: 95%;
 }
