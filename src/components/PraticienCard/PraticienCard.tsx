@@ -26,7 +26,7 @@ function PraticiensCard({ data }: PraticiensCardProps) {
 				<p>{data.specialite}</p>
 			</div>
 			<Link to={`/details/${data.id}`} className="button praticien-card-btn">
-				Decouvrir ce praticien
+				Decouvrir
 			</Link>
 			<img
 				src={data.badge}
