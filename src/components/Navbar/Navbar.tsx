@@ -54,7 +54,7 @@ function Navbar() {
 					<ul className="navbar-list">
 						<li>
 							<NavLink to="/" className="navbar-link" onClick={handleLinkClick}>
-								Home
+								Accueil
 							</NavLink>
 						</li>
 						<li>
@@ -63,7 +63,7 @@ function Navbar() {
 								className="navbar-link"
 								onClick={handleLinkClick}
 							>
-								Search
+								Praticiens
 							</NavLink>
 						</li>
 						<li>
@@ -72,7 +72,7 @@ function Navbar() {
 								className="navbar-link"
 								onClick={handleLinkClick}
 							>
-								About
+								À propos
 							</NavLink>
 						</li>
 						{/* Toggle light dark theme */}
